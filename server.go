@@ -430,7 +430,7 @@ func (c *Client) ServerCreate(server Server, autoGenerate bool) (int, error) {
 }
 
 //ServerCreateAndRegister manually creates and registers a server
-func (c *Client) ServerCreateAndRegister(serverCreateAndRegister ServerCreateAndRegister) (int, error) {
+func (c *Client) ServerCreateAndRegister(serverCreateAndRegister ServerCreateAndRegister, deviceType string) (int, error) {
 
 	var createdObject Server
 
@@ -438,7 +438,7 @@ func (c *Client) ServerCreateAndRegister(serverCreateAndRegister ServerCreateAnd
 		&createdObject,
 		"server_create_and_register",
 		serverCreateAndRegister,
-		"server",
+		deviceType,
 	)
 
 	if err != nil {
