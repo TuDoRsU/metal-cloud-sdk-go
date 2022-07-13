@@ -286,7 +286,7 @@ type MetalCloudClient interface {
 	//ServerCreate manually creates a server record
 	ServerCreate(server Server, autoGenerate bool) (int, error)
 	//ServerCreateAndRegister manually creates and registers a server
-	ServerCreateAndRegister(serverCreateAndRegister ServerCreateAndRegister) (int, error)
+	ServerCreateAndRegister(serverCreateAndRegister ServerCreateAndRegister, deviceType string) (int, error)
 	//ServerEditComplete - perform a complete edit
 	ServerEditComplete(serverID int, server Server) (*Server, error)
 	//ServerEditIPMI - edit only IPMI settings
