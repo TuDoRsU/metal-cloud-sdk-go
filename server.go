@@ -212,9 +212,11 @@ type ServerEditInventory struct {
 type ServerCreateAndRegister struct {
 	DatacenterName           string `json:"datacenter_name" yaml:"datacenter"`
 	ServerVendor             string `json:"server_vendor" yaml:"vendor"`
-	ServerManagementAddress  string `json:"server_ipmi_host" yaml:"address"`
-	ServerManagementUser     string `json:"server_ipmi_user" yaml:"user"`
-	ServerManagementPassword string `json:"server_ipmi_password" yaml:"pass"`
+	ServerManagementAddress  string `json:"server_ipmi_host,omitempt" yaml:"address,omitempt"`
+	ServerManagementUser     string `json:"server_ipmi_user,omitempt" yaml:"user,omitempt"`
+	ServerManagementPassword string `json:"server_ipmi_password,omitempt" yaml:"pass,omitempt"`
+	ChassisRackID            int    `json:"chassis_rack_id,omitempt" yaml:"chassis_rack_id,omitempt"`
+	ServerSerialNumber       string `json:"server_serial_number,omitempt" yaml:"server_serial_number,omitempt"`
 }
 
 //ServersSearch searches for servers matching certain filter
